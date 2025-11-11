@@ -78,8 +78,9 @@ const play = (/* amount */) => {
 
      oints++;
      if (oints >= 7) {
-          const e = document.getElementById("e");
-          e.innerHTML = 'Game Over';
+          document.getElementById('result').textContent = 'Game Over';
+          const btn=document.getElementById('again'); if(btn) btn.disabled=true;
+          return;
      }
 
      //     for (let index = 0; index < amount; index++) {
@@ -104,8 +105,9 @@ const play = (/* amount */) => {
      third.innerHTML = thirdl;
 
      if (firstl == secondl && firstl == thirdl && secondl == thirdl) {
-          const e = document.getElementById("e");
-          e.innerHTML = 'You win';
+          document.getElementById('result').textContent = 'You win';
+          const btn=document.getElementById('again'); if(btn) btn.disabled=true;
+          return;          
           // winCount++;
           // if (winCount == 100) { win = true; }
      } else {
